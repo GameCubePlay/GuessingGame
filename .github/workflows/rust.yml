@@ -11,8 +11,13 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
 
     steps:
     - uses: actions/checkout@v2
